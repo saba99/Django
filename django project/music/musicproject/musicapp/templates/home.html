@@ -1,0 +1,150 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="{ % static 'css/style.css'%}">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="{% static 'js/index.js ' %}"></script>
+   <style type="text/css">
+    @font-face{
+
+   font-family:IRANSans;
+              
+   url:({% static "font/iransans.ttf%"});
+    }
+   body{
+    font-family:IRANSans;
+     }
+   .font-album{
+    font-size:24px;
+    direction:ltr;
+   letter-spacing: .25px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    margin-top: 5px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden
+
+
+     } 
+
+    .album-img  {
+    border-style: none;
+    height: auto;
+    width: 100%;
+    border-radius:5px;
+}  
+
+
+.album-left-img{
+   height:125px;
+   width:125px;
+   border-radius:5px;
+    
+}
+    </style>
+</head>
+<body>
+<div class="row">
+<div class="col s12">
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+<div class="row">
+<div class="col s1"></div>
+<div class="col s7">
+
+<div class="card-panel ">
+<div class="font-album">
+
+
+</div>
+  <div class="row">
+  <div class="col s4" >
+  <img  class="album-img" src="{{album.cover.url}}" alt="{{album.title}}">
+  
+  </div>
+  <!--end col s4-->
+  <div class="col s8">
+    <div class="font-album">Center Point Road</div>
+    <div class="grey-text text-darken-1">By    {{ album.artist }}  </div>
+    <div class="grey-text text-darken-1">Released on    {{ album.release_date }}  </div>
+    <div class="grey-text  text-darken-1 ">Genre : {{album.genre}} </div>
+     <br>
+     <br>
+     
+    <div class="grey-text text-darken-1">{{album.description}}</div>
+    
+  </div>
+  <!--end col s8-->
+  </div>
+  <!--end row-->
+  
+</div>
+
+  
+  <div class="row">
+  <div class="col s12 " style="display:block ; max-height:350px ; overflow-y:scroll">
+    
+    
+   <table>
+        
+
+        <tbody>
+        {% for track in tracks%}
+          <tr>
+            <td><a href="{{MEDIA_URL}}{{track.music}}" >{{track.title}}</a></td>
+            <td><a class="grey-text text-darken-2" href="{{MEDIA_URL}}{{track.music}}" ><i class="material-icons">file_download</i></a></td>
+            <td><a class=" grey-text text-darken-2" href="{{MEDIA_URL}}{{track.music}}" ><i class="material-icons">playlist_add</i></a></td>
+          </tr>
+                     
+          </tr>
+          {%endfor%}
+        </tbody>
+        
+      </table>
+      
+      
+  </div>
+  </div>
+  
+  </div>
+
+
+<!--end col s7-->
+<div class="col s3">
+<div class="card-panel " >
+
+  {{album.cover}}
+ 
+<img  class="album-left-img" src="{{album.cover.url}}" alt="{{album.title}}">
+
+<hr>
+
+</div>
+</div>
+<!--end col s3-->
+<div class="col s1"></div>
+</div>
+</div>
+</body>
+
+</html>

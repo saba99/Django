@@ -1,0 +1,16 @@
+{%extends "parent/main.html"} {%block title%} {{super}}| blog {%endblock%} {%bock body%}
+<h1>All posts</h1>
+{%if latest_post%}
+<ul>
+    {% for post in latest_post%}
+    <li>
+        <!--a href="/blog/{{post.id}}">post.slug</a> -->
+        <a href="{%url 'blog: detail ' post.id %}"></a>
+    </li>
+    {%endfor%}
+</ul>
+{%else%}
+<p style="color:brown">no post are available</p>
+{%endif%}
+<h2></h2>
+{%endblock%}

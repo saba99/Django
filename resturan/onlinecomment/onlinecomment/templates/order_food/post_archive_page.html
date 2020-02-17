@@ -1,0 +1,22 @@
+{% if Comments %} {% for Comment in Comments %}
+
+<article>
+    <header>
+        <h2>
+            {{Comment.Author}}
+        </h2>
+    </header>
+    <p class="publish-data">
+
+        <time itemprop="datepublished" datetime="{{Comment.Date|date:'Y-m-d H:i:s'}}">
+    {{Comment.Date}}
+</time>
+        <span itemprop="author">{{Comment.Author}}</span>
+        <span itemprop="Comment">  {{Comment.comment}}</span>
+    </p>
+
+</article>
+
+
+
+{% endfor%} {% endif %}

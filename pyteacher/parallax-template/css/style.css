@@ -1,0 +1,184 @@
+@font-face{
+
+  font-family: Vazir;
+  src:url(pyteacher\parallax-template\font\Vazir.woff);
+}
+@font-face{
+
+  font-family: Vazir-Thin;
+  src:url(pyteacher\parallax-template\font\Vazir-Thin.woff);
+}
+@font-face{
+
+  font-family: Vazir-Bold;
+  src:url(pyteacher\parallax-template\font\Vazir-Bold.woff);
+}
+body,div,a,p,h1,h2,h3,h4,h5,h6,header,footer,nav,strong{
+
+  font-family: Vazir;
+  direction: rtl;
+}
+strong, b{
+font-family:  Vazir-Bold
+}
+h1{
+  font-size: 36px;
+}
+h2{
+  font-size: 30px;
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 14px;
+}
+h6{
+  font-size: 12px;
+}
+
+.more-course::after .solve-exercises::before{
+  font-family: 'MaterialIcons';
+  content:' chevron_left';
+  position: relative;
+  font-size: 23px;
+  top:8px;
+}
+.input-field > lable:not(.lable-icon).active{
+
+  transform: translateX(75px) translateY(-14px) scale(0.8);
+
+}
+.input-field.comment-input-field > lable:not(.lable-icon).active{
+transform: translateX(135px) translateY(-14px) scale(0.8);
+}
+.input-field > label{
+  right: 0;
+  padding: 0;
+  direction: rtl;
+  transform: translateX(5px) translateY(-10px) scale(0.8);
+}
+textarea.materialize-textarea {
+padding: 0;
+
+}
+.btn-floating.halfway-fab{
+  right:105px;
+  margin-top: 5px;
+  bottom:-37px;
+  border:3px #fff solid;
+  width: 80px;
+  height: auto;
+
+}
+.person-bio{
+  padding-top:50px; !important
+}
+.rtl{
+  direction: rtl; !important
+}
+.ltr{
+  direction: ltr; !important
+}
+
+.course-list::before{
+  font-family: 'MaterialIcons';
+
+  position: relative;
+  font-size: 23px;
+  top:8px;
+
+}
+.attachment-files::before{
+  font-family: 'MaterialIcons';
+  font-size: 35px;
+  position: relative;
+  font-size: 23px;
+  top:8px;
+  top:2px;
+  background-color: #ffffff40;
+  padding:14px;
+  border-radius: 50%;
+  margin-left: 20px;
+
+}
+.avatar-in-comment{
+
+  width:55px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.thin-card{
+  padding: 15px 24px;
+}
+.input-field-col lable{
+
+  right:0.75rem;
+}
+.fixed-action-btn.direction-left ul,.fixed-action-btn.direction-right ul{
+  direction: ltr;
+}
+.fixed-action-btn ul{
+  right:-35px;
+}
+
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+.card .card-image .card-title{
+  right=0;
+}
+.action-icons{
+  cursor: pointer;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

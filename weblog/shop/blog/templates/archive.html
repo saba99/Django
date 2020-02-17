@@ -1,0 +1,1 @@
+{%extends "parent/main.html"} {%block body%} {% if ayear_archive_post%} {% for post in year_archive_post%} {{post.title}} {% endfor%} {%else%} no post are available {%endif %} {%endblock%}

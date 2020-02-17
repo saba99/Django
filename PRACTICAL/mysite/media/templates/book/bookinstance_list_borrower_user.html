@@ -1,0 +1,40 @@
+{% extends 'shared/site.html' %} {% block body %}
+<div class="container">
+    <div style="margin-top:50px;"></div>
+    <div style="margin-bottom: 100px;"></div>
+    <section class="borrowed">
+        <h1 class="text-center text-white">borrowed books</h1>
+
+        {% if form.error %} {% for error,message in form.errors.items % }
+        <div class="alert alert-danger">{{error }} {{message}}</div>
+
+        {% endfor %} {% endif %} {% if bookinstance_list %}
+        <ul>
+            {% for bookinst in bookinstance_list %}
+            <li class="{% if bookinst.is_overdue %}" text-danger {% else %} text-white {% endif %}>
+                <a class="logout-link" href="{% url 'book:bookdetail' bookinst.book.pk  %}">{{bookinst.book.title}}</a>
+            </li>
+
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-center text-white">there is no books borrowed</p>
+        {% if perms.book.can_read_private_section %} {% if perms.book.User_watcher %}
+        <small> Enterd username is:<strong style="text-transform:Capitalize; " class="logout-link"></strong></small> {%else %}
+        <small style="color: tomato;"> you don't  have  permission to see here </small> {% endif %} {%else %}
+        <small style="color: tomato;"> you don't have permission to see here </small> {% endif %} {% endif %}
+    </section>
+    <form methode="post">
+
+        <div class="form-group">
+            {% csrf_token %}
+            <lable for="renewal-date">
+                {{form.renewal_date.lable}} {{form.renewal_date}}
+            </lable>
+        </div>
+        <input class="btn btn-info" type="submit" value="submit" />
+    </form>
+
+
+</div>
+{% endblock %}

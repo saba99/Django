@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% if comments %}
+
+
+{% for comment in comments}
+<div  class="container">
+<article itemscope  itemtype="">
+
+<header>
+     <h2>{{Food.name}}</h2>
+</header>
+
+</article>
+
+</div>
+
+{% endfor %}
+{% end if %}

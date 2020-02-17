@@ -1,0 +1,14 @@
+ {% if book_list %} {% for book in book_list %}
+<tr>
+    <th>{{forloop.counter}}</th>
+    <th> {{book.title}}</th>
+    <th>{{book.summary}}</th>
+    <th>{{book.isbn}}</th>
+</tr>
+
+
+{% endfor %} {% include 'partials/pagination.html' %} {% if is_paginated %} {% if page_obj.has_previous % }
+<a href="{{request.path}}?page={{page_obj.previous_page_number}}"></a>
+{% endif %} page {{page_obj.number}} of {{page_obj.paginator.num_pages}} pages {% if page_obj.has_next % }
+<a href="{{request.path}}?page={{page_obj.next_page_number}}"></a>
+{% endif %} {% for b in my_book %} {{b.title}} {{b.summary}} {% endfor %} {% endif %}
